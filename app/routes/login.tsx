@@ -1,15 +1,13 @@
-import { useSignal } from "@preact/signals";
-import Counter from "../islands/Counter.tsx";
 import Header from "../components/templates/Header.tsx";
 import Footer from "../components/templates/Footer.tsx";
-import Body from "../components/templates/Body.tsx";
 
-export default function Home() {
+export default function Login() {
   return (
     <>
       <Header />
       <div class="flex flex-col items-center justify-center m-4">
-        <Body />
+        <h1 class="text-2xl font-bold">Login</h1>
+        <p class="text-xl">This is the login page.</p>
       </div>
       <Footer />
     </>
