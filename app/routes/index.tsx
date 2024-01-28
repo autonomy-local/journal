@@ -1,5 +1,4 @@
 import { useSignal } from "@preact/signals";
-import Counter from "../islands/Counter.tsx";
 import Header from "../components/templates/Header.tsx";
 import Footer from "../components/templates/Footer.tsx";
 import Body from "../components/templates/Body.tsx";
