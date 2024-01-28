@@ -17,7 +17,9 @@ import * as $demo_desk_money from "./routes/demo/desk/money.tsx";
 import * as $demo_desk_on_site from "./routes/demo/desk/on-site.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $login from "./routes/login.tsx";
-
+import * as $area_delete from "./islands/area/delete.tsx";
+import * as $area_table from "./islands/area/table.tsx";
+import * as $area_update from "./islands/area/update.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -38,7 +40,11 @@ const manifest = {
     "./routes/index.tsx": $index,
     "./routes/login.tsx": $login,
   },
-  islands: {},
+  islands: {
+    "./islands/area/delete.tsx": $area_delete,
+    "./islands/area/table.tsx": $area_table,
+    "./islands/area/update.tsx": $area_update,
+  },
   baseUrl: import.meta.url,
 } satisfies Manifest;
 
