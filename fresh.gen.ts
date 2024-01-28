@@ -6,7 +6,15 @@ import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $about from "./routes/about.tsx";
 import * as $api_joke from "./routes/api/joke.ts";
-import * as $demo_desk from "./routes/demo/desk.tsx";
+import * as $demo_desk_archive from "./routes/demo/desk/archive.tsx";
+import * as $demo_desk_area from "./routes/demo/desk/area.tsx";
+import * as $demo_desk_books from "./routes/demo/desk/books.tsx";
+import * as $demo_desk_community from "./routes/demo/desk/community.tsx";
+import * as $demo_desk_database from "./routes/demo/desk/database.tsx";
+import * as $demo_desk_editor from "./routes/demo/desk/editor.tsx";
+import * as $demo_desk_index from "./routes/demo/desk/index.tsx";
+import * as $demo_desk_money from "./routes/demo/desk/money.tsx";
+import * as $demo_desk_on_site from "./routes/demo/desk/on-site.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $login from "./routes/login.tsx";
 
@@ -18,7 +26,15 @@ const manifest = {
     "./routes/_app.tsx": $_app,
     "./routes/about.tsx": $about,
     "./routes/api/joke.ts": $api_joke,
-    "./routes/demo/desk.tsx": $demo_desk,
+    "./routes/demo/desk/archive.tsx": $demo_desk_archive,
+    "./routes/demo/desk/area.tsx": $demo_desk_area,
+    "./routes/demo/desk/books.tsx": $demo_desk_books,
+    "./routes/demo/desk/community.tsx": $demo_desk_community,
+    "./routes/demo/desk/database.tsx": $demo_desk_database,
+    "./routes/demo/desk/editor.tsx": $demo_desk_editor,
+    "./routes/demo/desk/index.tsx": $demo_desk_index,
+    "./routes/demo/desk/money.tsx": $demo_desk_money,
+    "./routes/demo/desk/on-site.tsx": $demo_desk_on_site,
     "./routes/index.tsx": $index,
     "./routes/login.tsx": $login,
   },

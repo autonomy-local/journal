@@ -6,82 +6,53 @@ import IconBallpen from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/ballpen.
 import IconArchive from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/archive.tsx";
 import IconBuildingCommunity from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/building-community.tsx";
 import IconPigMoney from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/pig-money.tsx";
+import IconHelp from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/help.tsx";
 
-export default function Container() {
+type Props = {
+  active: string;
+};
+
+export default function Container({ active }: Props) {
+  const tabs = [
+    { name: "Area piece", icon: IconPuzzle, href: "/demo/desk/area" },
+    { name: "Database", icon: IconDatabase, href: "/demo/desk/database" },
+    { name: "Books", icon: IconBooks, href: "/demo/desk/books" },
+    { name: "On-Site", icon: IconWalk, href: "/demo/desk/on-site" },
+    { name: "Editor", icon: IconBallpen, href: "/demo/desk/editor" },
+    { name: "Archive", icon: IconArchive, href: "/demo/desk/archive" },
+    {
+      name: "Community",
+      icon: IconBuildingCommunity,
+      href: "/demo/desk/community",
+    },
+    { name: "Money", icon: IconPigMoney, href: "/demo/desk/money" },
+  ];
+
   return (
     <div class="container mx-auto bg-slate-100">
       <div class="desk-tabs">
-        <ul class="flex border-b">
-          <li class="-mb-px mr-1">
+        <ul class="flex justify-between border-b">
+          {tabs.map((tab) => (
+            <li class="-mb-px mr-1">
+              <a
+                class={"inline-block border-t border-r border-l rounded-t py-2 px-4 text-blue-700 font-semibold" +
+                  (tab.href === active
+                    ? "border-8 border-blue-800 -mb-px mr-1"
+                    : "border-l")}
+                href={tab.href}
+              >
+                <tab.icon class="w-4 h-4 inline-block align-text-top" />
+                <span class="inline-block ml-2">{tab.name}</span>
+              </a>
+            </li>
+          ))}
+          <li class="mr-1">
             <a
-              class="bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-700 font-semibold"
-              href="#"
+              class="inline-block border-t border-r border-l rounded-t py-2 px-4 text-blue-700 font-semibold"
+              href="/help"
             >
-              <IconPuzzle class="w-4 h-4 inline-block align-text-top" />
-              <span class="inline-block ml-2">Area piece</span>
-            </a>
-          </li>
-          <li class="-mb-px mr-1">
-            <a
-              class="bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-700 font-semibold"
-              href="#"
-            >
-              <IconDatabase class="w-4 h-4 inline-block align-text-top" />
-              <span class="inline-block ml-2">Database</span>
-            </a>
-          </li>
-          <li class="-mb-px mr-1">
-            <a
-              class="bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-700 font-semibold"
-              href="#"
-            >
-              <IconBooks class="w-4 h-4 inline-block align-text-top" />
-              <span class="inline-block ml-2">Books</span>
-            </a>
-          </li>
-          <li class="-mb-px mr-1">
-            <a
-              class="bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-700 font-semibold"
-              href="#"
-            >
-              <IconWalk class="w-4 h-4 inline-block align-text-top" />
-              <span class="inline-block ml-2">On-Site</span>
-            </a>
-          </li>
-          <li class="-mb-px mr-1">
-            <a
-              class="bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-700 font-semibold"
-              href="#"
-            >
-              <IconBallpen class="w-4 h-4 inline-block align-text-top" />
-              <span class="inline-block ml-2">Editor</span>
-            </a>
-          </li>
-          <li class="-mb-px mr-1">
-            <a
-              class="bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-700 font-semibold"
-              href="#"
-            >
-              <IconArchive class="w-4 h-4 inline-block align-text-top" />
-              <span class="inline-block ml-2">Archive</span>
-            </a>
-          </li>
-          <li class="-mb-px mr-1">
-            <a
-              class="bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-700 font-semibold"
-              href="#"
-            >
-              <IconBuildingCommunity class="w-4 h-4 inline-block align-text-top" />
-              <span class="inline-block ml-2">Community</span>
-            </a>
-          </li>
-          <li class="-mb-px mr-1">
-            <a
-              class="bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-700 font-semibold"
-              href="#"
-            >
-              <IconPigMoney class="w-4 h-4 inline-block align-text-top" />
-              <span class="inline-block ml-2">Money</span>
+              <IconHelp class="w-4 h-4 inline-block align-text-top" />
+              <span class="inline-block ml-2">Help</span>
             </a>
           </li>
         </ul>

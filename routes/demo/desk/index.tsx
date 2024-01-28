@@ -1,5 +1,5 @@
-import Header from "../../components/templates/Header.tsx";
-import Container from "../../components/pages/desk/Container.tsx";
+import Header from "../../../components/templates/Header.tsx";
+import Container from "../../../components/pages/desk/Container.tsx";
 
 export default function Desk() {
   return (
