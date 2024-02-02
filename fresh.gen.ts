@@ -20,7 +20,9 @@ import * as $login from "./routes/login.tsx";
 import * as $area_delete from "./islands/area/delete.tsx";
 import * as $area_table from "./islands/area/table.tsx";
 import * as $area_update from "./islands/area/update.tsx";
+import * as $database_file_register_file from "./islands/database/file/register-file.tsx";
 import * as $database_table from "./islands/database/table.tsx";
+import * as $database_utils_file_reader from "./islands/database/utils/file-reader.ts";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -45,7 +47,9 @@ const manifest = {
     "./islands/area/delete.tsx": $area_delete,
     "./islands/area/table.tsx": $area_table,
     "./islands/area/update.tsx": $area_update,
+    "./islands/database/file/register-file.tsx": $database_file_register_file,
     "./islands/database/table.tsx": $database_table,
+    "./islands/database/utils/file-reader.ts": $database_utils_file_reader,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

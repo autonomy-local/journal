@@ -13,7 +13,7 @@ export default function DeleteArea({ id }: DeleteAreaProps) {
             class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-red-100 text-red-800"
             onClick={() => {
               console.log(targetID.value);
-              window.alert("Delete");
+              alert("Delete");
             }}
           >
             Delete
