@@ -7,7 +7,8 @@ If you want to use the file system API, you need to use the `wicg-file-system-ac
 This package is not included in the standard library, so you need to install it separately.
 Types refer to the following URL:https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/wicg-file-system-access/ts5.0/index.d.ts
 */
-import * as FileSystemAPI from "wicg-file-system-access";
+
+import * as _FileSystemAPI from "wicg-file-system-access";
 
 export const getFileHandle = async (): Promise<
   FileSystemFileHandle | Error
