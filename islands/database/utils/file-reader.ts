@@ -22,7 +22,7 @@ export const getFileHandle = async (): Promise<
       ],
     };
     const fileHandle = await showOpenFilePicker({ multiple: false, ...option });
-    if (fileHandle[0]) {
+    if (!fileHandle[0]) {
       return new Error("there is no fileHandle.");
     }
     return fileHandle[0];
