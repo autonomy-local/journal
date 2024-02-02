@@ -1,14 +1,17 @@
 import IconFile from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/file.tsx";
 import {
   getFileHandle,
-  isFileHandle,
+  isFileSystemFileHandle,
   writeFile,
 } from "../utils/file-reader.ts";
 export default function RegisterFile() {
   const handleOnClick = async () => {
     const fileHandle = await getFileHandle();
-    if (!isFileHandle(fileHandle)) {
+    if (!fileHandle) {
       throw new Error("FileHandle is not valid");
+    }
+    if (!isFileSystemFileHandle(fileHandle)) {
+      throw new Error("FileHandle is not a FileSystemFileHandle");
     }
     const error = writeFile(fileHandle, "test");
     if (error) {

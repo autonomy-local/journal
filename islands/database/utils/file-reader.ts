@@ -35,6 +35,7 @@ export const writeFile = async (
   fileHandle: FileSystemFileHandle,
   contents: string,
 ): Promise<null | Error> => {
+  if (!fileHandle) return new Error("fileHandle is not found.");
   try {
     const writable = await fileHandle.createWritable();
     await writable.write(contents);
@@ -92,8 +93,10 @@ export type FileData = {
   contents: string;
 };
 
-export const isFileHandle = (
-  fileHandle: unknown,
-): fileHandle is FileSystemFileHandle => {
-  return fileHandle instanceof FileSystemFileHandle;
-};
+export function isFileSystemFileHandle(
+  fileHandle: FileSystemFileHandle | Error,
+): fileHandle is FileSystemFileHandle {
+  // Errorオブジェクトにkindプロパティがないため、kindプロパティがあるかどうかで判定
+  // ref: https://developer.mozilla.org/ja/docs/Web/API/FileSystemHandle/kind
+  return (fileHandle as FileSystemFileHandle).kind !== undefined;
+}
