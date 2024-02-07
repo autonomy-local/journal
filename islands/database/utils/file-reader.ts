@@ -65,6 +65,7 @@ export const createNewFile = async (
 
 export const readFile = async (
   fileHandle: FileSystemFileHandle,
+  option: { type: "text" | "arrayBuffer" },
 ): Promise<FileData | Error> => {
   try {
     const file: File = await fileHandle.getFile();
@@ -75,8 +76,13 @@ export const readFile = async (
       size: file.size,
       relativePath: fileHandle.name,
     };
-    const contents = await file.text();
-    return { fileDetail, contents };
+    if (option.type === "text") {
+      const contents = await file.text();
+      return { fileDetail, contents };
+    } else {
+      const buffer = await file.arrayBuffer();
+      return { fileDetail, contents: buffer };
+    }
   } catch (error) {
     return new Error(error.message);
   }
@@ -92,7 +98,7 @@ export type FileDetail = {
 
 export type FileData = {
   fileDetail: FileDetail;
-  contents: string;
+  contents: string | ArrayBuffer;
 };
 
 export function isFileSystemFileHandle(
