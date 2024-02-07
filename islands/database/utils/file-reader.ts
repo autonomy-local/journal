@@ -22,6 +22,12 @@ export const getFileHandle = async (): Promise<
             "text/plain": [".txt"],
           },
         },
+        {
+          description: "json Files",
+          accept: {
+            "application/json": [".json"],
+          },
+        },
       ],
     };
     const fileHandle = await showOpenFilePicker({ multiple: false, ...option });
